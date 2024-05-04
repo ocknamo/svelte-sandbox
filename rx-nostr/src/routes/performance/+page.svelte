@@ -26,10 +26,14 @@
 
 	onDestroy(() => {
 		console.log('[on destroy]');
-		subscription.unsubscribe();
 	});
+
+	const onClick = () => {
+		subscription.unsubscribe();
+		console.log('[on click]');
+	};
 </script>
 
 <h1>Performance</h1>
 
-<a href="/">Top</a>
+<a href="/" on:click={onClick}>Top</a>
